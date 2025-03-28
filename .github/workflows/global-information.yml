@@ -1,0 +1,12 @@
+name: Deploy website
+
+on: workflow_dispatch
+
+jobs:
+  output:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print all information
+        run: |
+          echo ${{ github }}
+          echo ${{ toJSON(github) }}
