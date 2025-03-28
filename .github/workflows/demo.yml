@@ -26,6 +26,15 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
+      - name: Check files and directories
+        run: |
+          ls
+          pwd
+      - name: Store dist as an Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-files
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
